@@ -1,0 +1,147 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="page-title-box">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="text-center text-white">
+          <h3 class="mb-4">Skills</h3>
+          <div class="page-next">
+            <nav class="d-inline-block" aria-label="breadcrumb text-center">
+              <!-- Breadcrumb navigation can be added here -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="position-relative" style="z-index: 1">
+  <div class="shape">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+      <path fill="" fill-opacity="1"
+        d="M0,192L120,202.7C240,213,480,235,720,234.7C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
+      </path>
+    </svg>
+  </div>
+</div>
+
+
+
+<section class="container mt-5">
+  <h1 class="text-center">Skill Recommender</h1>
+  
+  <div class="row mt-5">
+    <!-- Card for Information Technology -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <img src="{% static 'images/skill photos/coding.png'%}" alt="Information Technology" class="card-img-top" style="height: 60px; width: 60px;">
+          <h5 class="card-title">
+            <i class="fas fa-laptop"></i> Information Technology
+          </h5>
+          <p class="card-text">Information Technology (IT) refers to the use, development, and management of computer-based systems and networks to store, process, transmit, and retrieve information. It involves a broad range of technologies and practices that support various aspects of computing, including hardware, software, databases, networks, and cybersecurity.</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Card for Sales -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <img src="{% static 'images/skill photos/sales.png'%}" alt="Information Technology" class="card-img-top" style="height: 60px; width: 60px;">
+          <h5 class="card-title">
+            <i class="fas fa-shopping-cart"></i> Sales
+          </h5>
+          <p class="card-text">Sales is the process of promoting and selling products or services to customers. It involves activities such as prospecting, lead generation, pitching, negotiation, and closing deals. Sales professionals use their interpersonal and communication skills to understand customer needs, build relationships, and persuade potential buyers to make a purchase.</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Card for Software Engineering -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <img src="{% static 'images/skill photos/programming.png'%}" alt="Information Technology" class="card-img-top" style="height: 60px; width: 60px;">
+          <h5 class="card-title">
+            <i class="fas fa-cogs"></i> Software Engineering
+          </h5>
+          <p class="card-text">Software Engineering is the discipline of designing, developing, testing, and maintaining software systems. It encompasses the application of engineering principles and systematic approaches to create reliable, scalable, and high-quality software solutions. Software engineers utilize various programming languages, development methodologies, and tools to build software applications that meet specific requirements.</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Card for Programming -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <img src="{% static 'images/skill photos/cpu.png'%}" alt="Information Technology" class="card-img-top" style="height: 60px; width: 60px;">
+          <h5 class="card-title">
+            <i class="fas fa-code"></i> Programming
+          </h5>
+          <p class="card-text">Programming involves writing instructions in a specific programming language to create software applications, websites, or automate tasks. It is the process of translating logical algorithms into a format that a computer can understand and execute. Programmers use their knowledge of programming languages, algorithms, data structures, and problem-solving skills to develop efficient and functional software solutions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+</section>
+
+<section class="container mt-5">
+
+  <form method="GET" action="{% url 'skills' %}">
+    <div class="form-group">
+      <label for="job">Search for your skills based on the job title:</label>
+      <input type="text" id="job" name="job" class="form-control" placeholder="Enter your job" />
+    </div>
+    <div class="text-center">
+      <input type="submit" value="Search" class="btn btn-primary">
+    </div>
+  </form>
+  
+
+
+
+<!-- Existing HTML code above -->
+{% if skills %}
+<div class="mt-5">
+  <h2>Filtered Skills:</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Skill</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for skill in skills %}
+      <tr>
+        <td>{{ skill }}</td>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+{% else %}
+<p>No skills found.</p>
+{% endif %}
+
+
+<div class="text-center">
+  <a href="{% url 'jobs' %}" >Already know your skills? Search jobs here</a>
+</div>
+
+<!-- Existing HTML code below -->
+
+</section>
+
+
+{% endblock %}

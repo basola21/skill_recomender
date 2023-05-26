@@ -1,0 +1,276 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <!-- Start home -->
+    <section class="page-title-box">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-center text-white">
+                        <h3 class="mb-4">Home</h3>
+                        <div class="page-next">
+                            <nav class="d-inline-block" aria-label="breadcrumb text-center">
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!-- end home -->
+
+        <!-- START SHAPE -->
+        <div class="position-relative" style="z-index: 1">
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+                    <path fill="" fill-opacity="1"
+                        d="M0,192L120,202.7C240,213,480,235,720,234.7C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
+                    </path>
+                </svg>
+            </div>
+        </div>
+        <!-- END SHAPE -->
+        <section class="bg-home2" id="home" style="padding-top: 10px;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="mb-4 pb-3 me-lg-5">
+                            <h6 class="sub-title">We have many skills with linked jobs</h6>
+                            <h1 class="display-5 fw-semibold mb-3">Unleash Your Skills Potential with <span
+                                    class="text-primary fw-bold">Career.ly</span></h1>
+                            <p class="lead text-muted mb-0">Discover Your Hidden Talents, Supercharge Your Expertise.
+                                Explore, Enhance, Excel – the Ultimate Skill Transformation Platform.
+                                Uncover Your True Potential and Ignite Your Career Success!</p>
+                        </div>
+        
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <a href="{% url 'login' %}" class="btn btn-lg btn-primary">Login</a>
+                            <a href="{% url 'register' %}" class="btn btn-lg btn-secondary">Sign Up</a>
+                        </div>                        
+                        
+        
+        
+                    </div>
+                    <!--end col-->
+                    <div class="col-lg-5">
+                        <div class="mt-5 mt-md-0">
+                            <img src="{% static 'images/process-02.png' %}" alt="" class="home-img" />
+                        </div>
+                    </div><!--end col-->
+                </div>
+                <!--end row-->
+            </div>
+            <!--end container-->
+        </section>
+        
+
+        
+<!-- End Home -->
+
+<!-- START SHAPE -->
+<div class="position-relative">
+    <div class="shape">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440"
+            height="150" preserveAspectRatio="none" viewBox="0 0 1440 220">
+            <g mask="url(&quot;#SvgjsMask1004&quot;)" fill="none">
+                <path d="M 0,213 C 288,186.4 1152,106.6 1440,80L1440 250L0 250z" fill="rgba(255, 255, 255, 1)"></path>
+            </g>
+            <defs>
+                <mask id="SvgjsMask1004">
+                    <rect width="1440" height="250" fill="#ffffff"></rect>
+                </mask>
+            </defs>
+        </svg>
+    </div>
+</div>
+<!-- END SHAPE -->
+
+<!-- START CATEGORY -->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section-title text-center">
+                    <h3 class="title">Skills Categories</h3>
+                    <p class="text-muted">See which jobs are linked with which skills</p>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                <div class="popu-category-box rounded text-center">
+                    <div class="popu-category-icon icons-md">
+                        <i class="uim uim-layers-alt"></i>
+                    </div>
+                    <div class="popu-category-content mt-4">
+                        <a href="{%url 'skills'%}" class="text-dark stretched-link">
+                            <h5 class="fs-18">Information Technology</h5>
+                        </a>
+                        <p class="text-muted mb-0">{{it_job_count}} Jobs</p>
+                    </div>
+                </div><!--end popu-category-box-->
+            </div>
+            <!--end col-->
+            <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                <div class="popu-category-box rounded text-center">
+                    <div class="popu-category-icon icons-md">
+                        <i class="uim uim-airplay"></i>
+                    </div>
+                    <div class="popu-category-content mt-4">
+                        <a href="{%url 'skills'%}" class="text-dark stretched-link">
+                            <h5 class="fs-18">Sales</h5>
+                        </a>
+                        <p class="text-muted mb-0">{{sales_job_count}} Jobs</p>
+                    </div>
+                </div><!--end popu-category-box-->
+            </div>
+            <!--end col-->
+            <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                <div class="popu-category-box rounded text-center">
+                    <div class="popu-category-icon icons-md">
+                        <i class="uim uim-bag"></i>
+                    </div>
+                    <div class="popu-category-content mt-4">
+                        <a href="{%url 'skills'%}" class="text-dark stretched-link">
+                            <h5 class="fs-18">Software Engineering
+                            </h5>
+                        </a>
+                        <p class="text-muted mb-0">{{se_job_count}} Jobs</p>
+                    </div>
+                </div><!--end popu-category-box-->
+            </div>
+            <!--end col-->
+            <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                <div class="popu-category-box rounded text-center">
+                    <div class="popu-category-icon icons-md">
+                        <i class="uim uim-user-md"></i>
+                    </div>
+                    <div class="popu-category-content mt-4">
+                        <a href="{%url 'skills'%}" class="text-dark stretched-link">
+                            <h5 class="fs-18">Programming</h5>
+                        </a>
+                        <p class="text-muted mb-0">{{programming_job_count}} Jobs</p>
+                    </div>
+                </div><!--end popu-category-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="mt-5 text-center">
+                    <a href="{% url 'skills' %}" class="btn btn-primary btn-hover">Browse All Skills <i
+                            class="uil uil-arrow-right ms-1"></i></a>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!-- END CATEGORY -->
+
+
+<!--START CTA-->
+<section class="section bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="text-center">
+                    <h2 class="text-primary mb-4">Browse Our Latest
+                        Jobs</h2>
+                    <p class="text-muted">Post a job to tell us about your project. We'll quickly match you with
+                        the right freelancers.</p>
+                    <div class="mt-4 pt-2">
+                        <a href="{% url 'jobs'%}" class="btn btn-primary btn-hover">Started Now <i
+                                class="uil uil-rocket align-middle ms-1"></i></a>
+                    </div>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</section>
+<!--END CTA-->
+
+<!-- START PROCESS -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="section-title me-5">
+                    <h3 class="title">How It Work</h3>
+                    <p class="text-muted">Post a job to tell us about your project. We'll quickly match you with the
+                        right freelancers.</p>
+                    <div class="process-menu nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home"
+                            role="tab" aria-controls="v-pills-home" aria-selected="true">
+                            <div class="d-flex">
+                                <div class="number flex-shrink-0">
+                                    1
+                                </div>
+                                <div class="flex-grow-1 text-start ms-3">
+                                    <h5 class="fs-18">Register an account</h5>
+                                    <p class="text-muted mb-0">Start an account and enter your interest type</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile"
+                            role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                            <div class="d-flex">
+                                <div class="number flex-shrink-0">
+                                    2
+                                </div>
+                                <div class="flex-grow-1 text-start ms-3">
+                                    <h5 class="fs-18">Find your job</h5>
+                                    <p class="text-muted mb-0">Find jobs that match your interests</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" href="#v-pills-messages"
+                            role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                            <div class=" d-flex">
+                                <div class="number flex-shrink-0">
+                                    3
+                                </div>
+                                <div class="flex-grow-1 text-start ms-3">
+                                    <h5 class="fs-18">Explore the jobs</h5>
+                                    <p class="text-muted mb-0">start knowing the jobs that are linked to you.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div><!--end col-->
+            <div class="col-lg-6">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <img src="{% static 'images/process-01.png' %}" alt="" class="img-fluid">
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+                        <img src="{% static 'images/process-02.png' %}" alt="" class="img-fluid">
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">
+                        <img src="{% static 'images/process-03.png' %}" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div> <!--end row-->
+    </div><!--end container-->
+</section>
+<!-- END PROCESS -->
+
+
+{% endblock content %}
